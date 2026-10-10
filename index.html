@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stadium Surge Planner — Metro Operations (PS-05)</title>
+  <meta name="description" content="Control-room crowd planning tool for metro operations during stadium surges.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 1. Persistent Top Status Bar -->
+    <header class="top-status-bar" id="statusBar">
+      <div class="brand-section">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="3" width="16" height="16" rx="2"/>
+          <path d="M4 11h16M12 3v8M8 15h.01M16 15h.01M6 19l-2 2M18 19l2 2"/>
+        </svg>
+        <span class="brand-title">METRO SURGE PLANNER</span>
+        <span class="brand-subtitle" id="activeEventSubTitle">PS-05 Control Room Console</span>
+      </div>
+
+      <div class="status-controls">
+        <!-- AI Status Badge (Spec Section 5) -->
+        <span class="badge badge-ai-fallback" id="aiStatusBadge" title="Local Gemma offline or standby; using reviewed deterministic fallback templates">
+          <span class="badge-dot"></span>
+          <span id="aiStatusText">AI: fallback templates</span>
+        </span>
+
+        <!-- Network Connectivity Badge (Spec Section 10) -->
+        <span class="badge badge-online" id="networkBadge">
+          <span class="badge-dot"></span>
+          <span id="networkText">Online</span>
+        </span>
+
+        <!-- Print Action -->
+        <button class="btn btn-outline btn-sm no-print" id="btnPrintPlan" title="Print operational summary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Print plan
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+      <!-- Left Fixed Navigation Sidebar (Spec Section 10) -->
+      <aside class="sidebar">
+        <ul class="nav-list">
+          <li class="nav-item active" data-tab="sim">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            1 Event & Sim
+          </li>
+          <li class="nav-item" data-tab="plan" title="Tactical Plan & Action Timeline">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="8" y1="6" x2="21" y2="6"/>
+              <line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/>
+              <line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+            2 Plan
+          </li>
+          <li class="nav-item" data-tab="announcements" title="Scheduled for Step 5">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+            3 Announcements
+          </li>
+          <li class="nav-item" data-tab="scenarios" title="Step 2 Presets">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            4 Presets Overview
+          </li>
+        </ul>
+
+        <div class="sidebar-footer">
+          <div><strong>Build Order Status:</strong></div>
+          <div style="color: var(--accent-blue); font-weight: 600; margin-top: 2px;">Steps 1, 2 & 3 Complete</div>
+          <div style="margin-top: 6px;">Sim & Planner: Pure Deterministic JS</div>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-view" id="mainContent">
+        <!-- Rendered dynamically by src/main.js -->
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

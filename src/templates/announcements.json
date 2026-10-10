@@ -1,0 +1,60 @@
+{
+  "_comment": "Station announcement templates for metro crowd surge operations. Reviewed for accuracy in English, Hindi, and Gujarati.",
+  "phases": [
+    {
+      "id": "pre_event",
+      "phaseName": "Phase 1: Pre-Event Advisory",
+      "trigger": "t = -10 min (Pre-surge preparation)",
+      "isCritical": false,
+      "templates": {
+        "en": "Attention passengers at {station}. Special metro surge services are active for {event}. Trains are scheduled every {headway} minutes. Please keep your smart cards or QR tickets ready and move towards platform screens.",
+        "hi": "{station} पर यात्रियों का ध्यान दें। {event} के लिए विशेष मेट्रो सेवाएं सक्रिय हैं। ट्रेनें हर {headway} मिनट में उपलब्ध हैं। कृपया अपने स्मार्ट कार्ड या क्यूआर टिकट तैयार रखें और प्लेटफार्म स्क्रीन की ओर बढ़ें।",
+        "gu": "{station} ખાતે મુસાફરો ધ્યાન આપો. {event} માટે વિશેષ મેટ્રો સેવાઓ શરૂ છે. દર {headway} મિનિટે ટ્રેન ઉપલબ્ધ છે. કૃપા કરીને તમારા સ્માર્ટ કાર્ડ અથવા ક્યુઆર ટિકિટ તૈયાર રાખો અને પ્લેટફોર્મ તરફ આગળ વધો."
+      }
+    },
+    {
+      "id": "surge_start",
+      "phaseName": "Phase 2: Surge Start & Gate Direction",
+      "trigger": "t = 0 to +15 min (Event concluding, rapid egress)",
+      "isCritical": false,
+      "templates": {
+        "en": "Passengers arriving from {venue}: All {gates} entry turnstiles are open. Please tap through rapidly and use both concourse escalators. Special high-frequency train service is operating on Platform 1 and 2.",
+        "hi": "{venue} से आने वाले यात्रीगण: सभी {gates} प्रवेश द्वार खुले हैं। कृपया शीघ्रता से कार्ड टैप करें और दोनों कॉनकोर्स एस्केलेटर का उपयोग करें। प्लेटफार्म 1 और 2 पर विशेष हाई-फ्रीक्वेंसी ट्रेन सेवा उपलब्ध है।",
+        "gu": "{venue} તરફથી આવતા મુસાફરો: તમામ {gates} એન્ટ્રી ગેટ ખુલ્લા છે. કૃપા કરીને ઝડપથી કાર્ડ ટેપ કરો અને કોનકોર્સ એસ્કેલેટરનો ઉપયોગ કરો. પ્લેટફોર્મ 1 અને 2 પર વિશેષ હાઇ-ફ્રિક્વન્સી ટ્રેન દોડી રહી છે."
+      }
+    },
+    {
+      "id": "hold_in_place",
+      "phaseName": "Phase 3: Concourse Metering & Platform Protection",
+      "trigger": "t = +20 to +45 min (Platform density approaching 90%)",
+      "isCritical": true,
+      "templates": {
+        "en": "Attention passengers in concourse: For your safety, entry to the platform is currently regulated. Please wait in the designated holding area for approximately {waitMinutes} minutes. An empty train is arriving immediately.",
+        "hi": "कॉनकोर्स में उपस्थित यात्रियों का ध्यान दें: आपकी सुरक्षा के लिए प्लेटफार्म पर प्रवेश को अस्थायी रूप से नियंत्रित किया गया है। कृपया होल्डिंग एरिया में लगभग {waitMinutes} मिनट प्रतीक्षा करें। खाली ट्रेन तुरंत पहुंच रही है।",
+        "gu": "કોનકોર્સમાં ઉપસ્થિત મુસાફરો ધ્યાન આપો: તમારી સુરક્ષા માટે પ્લેટફોર્મ પ્રવેશ અસ્થાયી રીતે નિયંત્રિત છે. કૃપા કરીને હોલ્ડિંગ એરિયામાં લગભગ {waitMinutes} મિનિટ રાહ જુઓ. ખાલી ટ્રેન તરત જ આવી રહી છે."
+      }
+    },
+    {
+      "id": "platform_boarding",
+      "phaseName": "Phase 4: Metered Boarding & Steady Flow",
+      "trigger": "t = +45 to +65 min (Surge dispersal)",
+      "isCritical": false,
+      "templates": {
+        "en": "Passengers on concourse: Holding area gates are now open. Please proceed down to Platform {platform} in a single queue. Trains are arriving every {headway} minutes.",
+        "hi": "कॉनकोर्स के यात्रीगण: होल्डिंग क्षेत्र के द्वार अब खोल दिए गए हैं। कृपया कतार में प्लेटफार्म {platform} की ओर बढ़ें। हर {headway} मिनट में ट्रेन आ रही है।",
+        "gu": "કોનકોર્સના મુસાફરો: હોલ્ડિંગ એરિયાના દરવાજા ખુલ્લા કરવામાં આવ્યા છે. કૃપા કરીને લાઈનમાં પ્લેટફોર્મ {platform} તરફ આગળ વધો. દર {headway} મિનિટે ટ્રેન આવી રહી છે."
+      }
+    },
+    {
+      "id": "final_trains",
+      "phaseName": "Phase 5: Normalization & Final Services",
+      "trigger": "t = +75 min onwards (Tail-end crowd clearance)",
+      "isCritical": false,
+      "templates": {
+        "en": "Attention passengers: Event surge services are concluding. Regular timetable services are running at {headway}-minute intervals. Thank you for your cooperation and for travelling with Metro Rail.",
+        "hi": "यात्रियों का ध्यान दें: विशेष कार्यक्रम सेवाएं समाप्त हो रही हैं। नियमित समय सारिणी अनुसार ट्रेनें हर {headway} मिनट पर चल रही हैं। मेट्रो रेल में यात्रा और सहयोग के लिए धन्यवाद।",
+        "gu": "મુસાફરો ધ્યાન આપો: વિશેષ કાર્યક્રમ સેવાઓ હવે પૂર્ણ થઈ રહી છે. નિયમિત સમયપત્રક મુજબ દર {headway} મિનિટે ટ્રેન દોડી રહી છે. મેટ્રો રેલમાં મુસાફરી કરવા બદલ આભાર."
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "stadium-surge-planner",
+  "version": "1.0.0",
+  "description": "Metro Operations Stadium Surge Planner (PS-05) - Control Room Planning Tool",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:sim": "node scripts/test-sim.js",
+    "test:planner": "node scripts/test-planner.js"
+  },
+  "dependencies": {
+    "chart.js": "^4.4.7"
+  },
+  "devDependencies": {
+    "vite": "^6.1.0",
+    "vite-plugin-pwa": "^0.21.1"
+  }
+}
